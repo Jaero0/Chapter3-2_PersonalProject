@@ -35,6 +35,7 @@ public class PlayerStatusDisplay : MonoBehaviour
         DisplayPlayerInfo(ck.co_KingData);
     }
 
+    #region Display Player Information -> From Name to Current Gold
     void DisplayPlayerInfo(PlayerData pd)
     {
         nickNameTxt.text = pd.nickName;
@@ -45,7 +46,7 @@ public class PlayerStatusDisplay : MonoBehaviour
         currentExpTxt.text = pd.currentExp.ToString();
         maxExpTxt.text = " / " + (pd.SetNeedExp(pd.lv)).ToString("N2");
         expFillImgRect.sizeDelta = new Vector2((300 / pd.SetNeedExp(pd.lv) * pd.currentExp), 52);
-        expFillImgRect.DOScaleX(1, 2f);
+        expFillImgRect.DOScaleX(1, 3f).SetEase(Ease.InExpo);
 
         attValueTxt.text = pd.att.ToString();
         defValueTxt.text = pd.def.ToString();
@@ -53,4 +54,5 @@ public class PlayerStatusDisplay : MonoBehaviour
         criticalPercentageValueTxt.text = pd.criticalPercentage.ToString() + "%";
         currentGoldValueTxt.text = pd.currentGold.ToString("N0") + " G";
     }
+    #endregion
 }
