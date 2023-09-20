@@ -1856,13 +1856,13 @@ MonoBehaviour:
   invenSlot: {fileID: 6437516033745577341, guid: 4852e56fbe4cc6f4f9673d3aa20c6cc1, type: 3}
   scrollViewContent: {fileID: 2073692198}
   totalItem:
-  - {fileID: 11400000, guid: 53934aaa9a9e5c24ebd1a18e0d65c4b5, type: 2}
-  - {fileID: 11400000, guid: 974a46ba5b482e84b89ee52fd528f467, type: 2}
-  - {fileID: 11400000, guid: fde8ed5259c0ddd4997c1586d67101d2, type: 2}
-  - {fileID: 11400000, guid: 1b8563a86e297d34ba8a9abc37a8da40, type: 2}
-  - {fileID: 11400000, guid: 6ea295505e602c24d9e2af1f8083f036, type: 2}
-  - {fileID: 11400000, guid: 2dceba8dae5ccc34a967ab862df0fdcf, type: 2}
-  - {fileID: 11400000, guid: a359f88983962dd418621d3f6cac43a9, type: 2}
+  - {fileID: 7129120194877609219, guid: 92303ece14b95de499275f3fc96472c3, type: 3}
+  - {fileID: 8241158374547327811, guid: 1dac693bc4921b74fb2e34b8c498b13e, type: 3}
+  - {fileID: 4822845561387313113, guid: d1968c963b64393488a8b03dc9d37cd4, type: 3}
+  - {fileID: 1808933404594985031, guid: 5790aecc82651bf479da2209217de134, type: 3}
+  - {fileID: 7314556029746855258, guid: 67b20e6e4167c834181b11a9a88bde12, type: 3}
+  - {fileID: 1262095774034156917, guid: d2a273d53f4bd144cb653572fd6874e6, type: 3}
+  - {fileID: 591192590897256649, guid: bfed854287c15794c9bca0fd28aadc9d, type: 3}
   itemTotalCountTxt: {fileID: 415415141}
 --- !u!4 &543023065
 Transform:
