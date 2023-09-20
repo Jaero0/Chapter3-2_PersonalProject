@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemData : MonoBehaviour
+public class ItemData
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string itemName {  get; set; }
+    public int itemAtt { get; set; }
+    public int itemDef { get; set; }
+    public string itemInfo { get; set; }
 
-    // Update is called once per frame
-    void Update()
+    public ItemData(string Name, string Info, int Att, int Def)
     {
-        
+        itemName = Name;
+        itemInfo = Info;
+        itemAtt = Att;
+        itemDef = Def;
     }
 }
