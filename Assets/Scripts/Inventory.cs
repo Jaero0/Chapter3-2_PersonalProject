@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI itemTotalCountTxt;
 
-    Dictionary<int, string> inventorySlot_ItemName = new Dictionary<int, string>();
+    Dictionary<GameObject, string> inventorySlot_ItemName = new Dictionary<GameObject, string>();
 
     void Awake()
     {
@@ -20,10 +20,11 @@ public class Inventory : MonoBehaviour
 
     void InstanciateItemSlot()
     {
-        for (int i = 0; i < 42; i++)
+        for (int i = 0; i < 30; i++)
         {
-            invenSlot = Instantiate(invenSlot, scrollViewContent.transform);
-            inventorySlot_ItemName.Add(i, null);
+            GameObject slot;
+            slot = Instantiate(invenSlot, scrollViewContent.transform);
+            inventorySlot_ItemName.Add(slot, null);
         }
     }
 
