@@ -43,14 +43,14 @@ public class PlayerStatusDisplay : MonoBehaviour
         infoTxt.text = pd.info;
         
         currentExpTxt.text = pd.currentExp.ToString();
-        maxExpTxt.text = " / " + (pd.SetNeedExp(pd.lv)).ToString();
+        maxExpTxt.text = " / " + (pd.SetNeedExp(pd.lv)).ToString("N2");
         expFillImgRect.sizeDelta = new Vector2((300 / pd.SetNeedExp(pd.lv) * pd.currentExp), 52);
-        expFillImgRect.DOScaleX(1, 1f);
+        expFillImgRect.DOScaleX(1, 2f);
 
         attValueTxt.text = pd.att.ToString();
         defValueTxt.text = pd.def.ToString();
         hpValueTxt.text = pd.hp.ToString();
         criticalPercentageValueTxt.text = pd.criticalPercentage.ToString() + "%";
-        currentGoldValueTxt.text = pd.currentGold.ToString("N0");
+        currentGoldValueTxt.text = pd.currentGold.ToString("N0") + " G";
     }
 }
