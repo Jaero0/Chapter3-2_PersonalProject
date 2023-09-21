@@ -12,17 +12,18 @@ public class Inventory : MonoBehaviour
     [SerializeField] List<GameObject> totalItem = new List<GameObject>(); //scriptableObj list ini
 
     [SerializeField] private TextMeshProUGUI itemTotalCountTxt;
+    [SerializeField] private TextMeshProUGUI itemCurrentCountTxt;
 
     Dictionary<string, string> inventorySlot_ItemName = new Dictionary<string, string>();
 
     void Awake()
     {
-        IncreaseItemScale();
+        //IncreaseItemScale();
         InstanciateItem_Slot();
         DisplayInvenInfo();
     }
 
-    void IncreaseItemScale() //아이템크기가 왜인진 모르게 작음...
+    void IncreaseItemScale() //TODO : 아이템크기가 왜인진 모르게 작음...
     {
         for (int i = 0; i < totalItem.Count; i++)
         {
@@ -56,5 +57,17 @@ public class Inventory : MonoBehaviour
     void DisplayInvenInfo() //TODO : 현재 아이템 갯수 표시하기
     {
         itemTotalCountTxt.text = " / " + inventorySlot_ItemName.Count.ToString();
+
+        int itemCurrentount = 0;
+
+        foreach (string value in inventorySlot_ItemName.Values)
+        {
+            if (value != null)
+            {
+                itemCurrentount++;
+            }
+        }
+
+        itemCurrentCountTxt.text = itemCurrentount.ToString();
     }
 }
