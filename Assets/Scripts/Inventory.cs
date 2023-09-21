@@ -6,8 +6,13 @@ using System;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject invenSlot;
-    public GameObject scrollViewContent;
+    public static Inventory Instance;
+
+    [SerializeField] private GameObject invenSlot;
+    [SerializeField] private GameObject scrollViewContent;
+    [SerializeField] private GameObject EquipedImg;
+    public GameObject EquipedCommitImg;
+    [SerializeField] private GameObject InvenCloseBtnImg;
 
     [SerializeField] List<GameObject> totalItem = new List<GameObject>(); //scriptableObj list ini
 
@@ -18,20 +23,15 @@ public class Inventory : MonoBehaviour
 
     void Awake()
     {
-        //IncreaseItemScale();
+        Instance = this;
+
         InstanciateItem_Slot();
+
         DisplayInvenInfo();
     }
 
-    void IncreaseItemScale() //TODO : 아이템크기가 왜인진 모르게 작음...
-    {
-        for (int i = 0; i < totalItem.Count; i++)
-        {
-            totalItem[i].transform.localScale = new Vector3(70, 70, 1);
-        }
-    }
-
-    void InstanciateItem_Slot() //TODO : 아이템 스크롤하면 아이템만 둥둥 뜸
+    #region create inventorySlot_ItemNameDictionary & item init
+    void InstanciateItem_Slot()
     {
         for (int i = 0; i < 30; i++)
         {
@@ -40,6 +40,7 @@ public class Inventory : MonoBehaviour
             if (i < totalItem.Count)
             {
                 var items = Instantiate(totalItem[i], slot.transform);
+                var equip = Instantiate(EquipedImg, slot.transform);
                 inventorySlot_ItemName.Add("slot " + i, totalItem[i].name);
             }
             else
@@ -47,14 +48,13 @@ public class Inventory : MonoBehaviour
                 inventorySlot_ItemName.Add("slot " + i, null);
             }
         }
-
-        foreach (KeyValuePair<string, string> item in inventorySlot_ItemName)
-        {
-            Debug.Log($"({item.Key} : {item.Value})");
-        }
     }
+    #endregion
 
-    void DisplayInvenInfo() //TODO : 현재 아이템 갯수 표시하기
+
+
+    #region display max inventory slot count & current item count
+    void DisplayInvenInfo()
     {
         itemTotalCountTxt.text = " / " + inventorySlot_ItemName.Count.ToString();
 
@@ -70,4 +70,46 @@ public class Inventory : MonoBehaviour
 
         itemCurrentCountTxt.text = itemCurrentount.ToString();
     }
+    #endregion
+
+
+
+    #region on click button equip
+    public void OnClickEquipItem(Transform tr)
+    {
+        if (tr.childCount != 0)
+        {
+            Debug.Log(tr.childCount);
+            Debug.Log(EquipedCommitImg);
+            Instance.EquipedCommitImg.SetActive(true);
+            Instance.InvenCloseBtnImg.SetActive(false);
+        }
+    }
+    #endregion
+
+    public void OnClickEquipConfirmAdmit(Transform tr) //TODO : shitty bugs...
+    {
+        Transform childTransform = tr.GetChild(1);
+        GameObject child = childTransform.gameObject;
+        child.SetActive(true);
+        Instance.EquipedCommitImg.SetActive(false);
+        Instance.InvenCloseBtnImg.SetActive(true);
+    }
+
+    public void OnClickEquipConfirmCancel() 
+    {
+        Instance.EquipedCommitImg.SetActive(false);
+        Instance.InvenCloseBtnImg.SetActive(true);
+    }
 }
+
+//if (tr.childCount != 0)
+//{
+//    Transform childTransform = tr.GetChild(1);
+//    GameObject child = childTransform.gameObject;
+//    child.SetActive(true);
+//}
+//else if (tr.childCount == 0)
+//{
+//    Debug.Log("Empty Slot");
+//}
