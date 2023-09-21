@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7172661909595560282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8889334863329583350}
+  - component: {fileID: 257083889430164108}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8889334863329583350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172661909595560282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &257083889430164108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172661909595560282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 738859a730108834eae2938197298654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invenSlot: {fileID: 6437516033745577341, guid: 4852e56fbe4cc6f4f9673d3aa20c6cc1, type: 3}
+  scrollViewContent: {fileID: 0}
+  EquipedImg: {fileID: 5457519390645645448, guid: 1719691c645a7844e96443ffdcd1a083, type: 3}
+  EquipedCommitImg: {fileID: 845010321445199551, guid: 81c01b3f83ed90f48a612faef674cd00, type: 3}
+  InvenCloseBtnImg: {fileID: 4779069556544429860, guid: 0165a5321626e0445b898728c76013b3, type: 3}
+  totalItem:
+  - {fileID: 4786376755630894785, guid: c2408fba051f51c459a0dfaeb5a58626, type: 3}
+  - {fileID: 4786376755630894785, guid: 767b0e4c12134324c9785e34ae8522bc, type: 3}
+  - {fileID: 4786376755630894785, guid: 5b7b51d71590b574b9e2a3920791adb5, type: 3}
+  - {fileID: 4786376755630894785, guid: b514c6234af2e974ebb95375058a7011, type: 3}
+  - {fileID: 4786376755630894785, guid: 2612c5bece12f4440954f5277fc06ced, type: 3}
+  - {fileID: 4786376755630894785, guid: 9d6495c72e559dd42a98dbd8f1949bbb, type: 3}
+  - {fileID: 4786376755630894785, guid: dfb2073d88aab5541a8d14eb6d71ad2d, type: 3}
+  itemTotalCountTxt: {fileID: 0}
+  itemCurrentCountTxt: {fileID: 0}

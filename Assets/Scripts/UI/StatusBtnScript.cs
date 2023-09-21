@@ -25,7 +25,6 @@ public class StatusBtnScript : MonoBehaviour
         Vector3 statusWindowPos = new Vector3(1260, -270, 0);
         statusWindowRect.DOAnchorPos(statusWindowPos, 0.5f).SetEase(Ease.OutBack);
         animator.SetBool("ShouldMove", true);
-        pl.transform.DOMove(Vector2.right*10, 1f);
         Invoke("AnimatorSetFalse", 0.5f);
     }
 
