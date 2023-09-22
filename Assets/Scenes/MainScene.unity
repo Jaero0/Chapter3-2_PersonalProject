@@ -236,6 +236,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c01b3f83ed90f48a612faef674cd00, type: 3}
+--- !u!114 &1155358120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7973929631473667467, guid: 81c01b3f83ed90f48a612faef674cd00, type: 3}
+  m_PrefabInstance: {fileID: 1155358119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1562736144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 845010321445199551, guid: 81c01b3f83ed90f48a612faef674cd00, type: 3}
@@ -3183,6 +3194,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 257083889430164108, guid: fcb9e5af0454f774791ac39805fe6343, type: 3}
+      propertyPath: btn
+      value: 
+      objectReference: {fileID: 1155358120}
     - target: {fileID: 257083889430164108, guid: fcb9e5af0454f774791ac39805fe6343, type: 3}
       propertyPath: EquipedCommitImg
       value: 
