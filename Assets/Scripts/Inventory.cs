@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject scrollViewContent;
     [SerializeField] private GameObject EquipedImg;
     public GameObject EquipedCommitImg;
+    [SerializeField] public Button btn;
     [SerializeField] private GameObject InvenCloseBtnImg;
 
     [SerializeField] List<GameObject> totalItem = new List<GameObject>(); //scriptableObj list ini
@@ -37,6 +39,7 @@ public class Inventory : MonoBehaviour
         {
             GameObject slot;
             slot = Instantiate(invenSlot, scrollViewContent.transform);
+            slot.name = i.ToString();
             if (i < totalItem.Count)
             {
                 var items = Instantiate(totalItem[i], slot.transform);
@@ -83,11 +86,13 @@ public class Inventory : MonoBehaviour
             Debug.Log(EquipedCommitImg);
             Instance.EquipedCommitImg.SetActive(true);
             Instance.InvenCloseBtnImg.SetActive(false);
+            Instance.btn.onClick.RemoveAllListeners();
+            Instance.btn.onClick.AddListener(() => { OnClickEquipConfirmAdmit(tr); });
         }
     }
     #endregion
 
-    public void OnClickEquipConfirmAdmit(Transform tr) //TODO : shitty bugs...
+    public void OnClickEquipConfirmAdmit(Transform tr) //TODO : Unworkable. Now that you've created an invenslot dynamically, find a way to access it dynamically
     {
         Transform childTransform = tr.GetChild(1);
         GameObject child = childTransform.gameObject;
